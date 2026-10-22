@@ -169,6 +169,11 @@
     padding: 8px 0;
     text-align: center;
     background-color: #d9d9d9;
+    transition: all 0.3s;
+}
+.infor .infor_btn a:hover {
+    background-color: #391b6a;
+    color: #fff;
 }
 
 .movie_chart .swiper-slide {
@@ -198,7 +203,7 @@
     }
     .movie h2.ir_so {
         position: static;
-        width: auto;
+        width: 100%;
         height: auto;
         line-height: normal;
         text-indent: 0;
@@ -211,6 +216,7 @@
     .movie_title {
         margin-bottom: 20px;
     }
+
     .movie_title ul li {
         width: auto;
         border: 0;
@@ -224,7 +230,6 @@
         background: none;
         color: #666;
         font-weight: 600;
-
         position: relative;
     }
     .movie_title ul li.active a::before {
@@ -240,10 +245,21 @@
 @media (max-width: 600px) {
     #movie {
         padding: 16px;
+        padding-right: 0;
+        position: relative;
     }
-
+    #movie::after {
+        content: "";
+        width: 16px;
+        height: 800px;
+        background-color: #d9d9d9;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
     #movie .row {
         padding: 0 16px;
+        padding-right: 0;
     }
     .movie {
         padding: 16px 0;
@@ -251,20 +267,22 @@
     .movie_title ul li a {
         margin-right: 20px;
     }
+    .movie h2.ir_so {
+        width: calc(100% - 32px);
+    }
 }
-
 @media (max-width: 480px) {
     #movie {
         padding: 12px;
-    }
-    #movie::after {
-        content: "";
-        width: 12px;
-        height: 200px;
-        background-color: #d9d9d9;
+        padding-right: 0;
     }
     #movie .row {
         padding: 0 12px;
+        padding-right: 0;
+    }
+    #movie::after {
+        width: 12px;
+        height: 500px;
     }
     .movie {
         padding: 12px 0;
@@ -273,6 +291,10 @@
         margin-right: 10px;
         font-size: 14px;
     }
+    .movie h2.ir_so {
+        width: calc(100% - 24px);
+    }
 }
+
 @media (max-width: 320px) {
 }

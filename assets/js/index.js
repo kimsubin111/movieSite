@@ -24,3 +24,31 @@ movBtn.forEach((menu, index) => {
         movCont[index].style.display = "block";
     }); // 클릭한 버튼과 같은 index 보이기
 });
+
+// help - 공지사항
+// 공지사항 탭 메뉴
+const tabList = document.querySelectorAll(".notice > ul > li > a");
+const tabContents = document.querySelectorAll(".notice > ul > li > ul");
+
+// 전부 숨기고, active만 보이기
+tabContents.forEach((ul) => {
+    ul.style.display = "none";
+});
+document.querySelector(".notice > ul > li.active > ul").style.display = "block";
+// tabContents[0].style.display = "block";
+
+tabList.forEach((a) => {
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // 모든 메뉴 active 제거하고 전체 콘텐츠 숨기기
+        tabList.forEach((item) => {
+            item.parentElement.classList.remove("active");
+            item.nextElementSibling.style.display = "none";
+        });
+
+        // 클릭한 것만 active + 해당하는 콘텐츠 보이기
+        a.parentElement.classList.add("active");
+        a.nextElementSibling.style.display = "block";
+    });
+});

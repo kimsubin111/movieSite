@@ -14,11 +14,9 @@
 .new_left {
     /* width: calc(100% - 400px); */
     flex: 1;
-
     height: 500px;
     background: url(../img/new01.jpg) center center;
     background-size: cover;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +95,7 @@
 }
 .new_right .btn a {
     display: inline-block;
-    padding: 10px 20px 12px 30px;
+    padding: 10px 30px 12px 30px;
     box-sizing: border-box;
     width: 49%;
     text-align: center;
@@ -113,6 +111,20 @@
     color: #fff;
     border: 1px solid #6f2bc7;
 }
+.bar {
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.bar::after {
+    content: "";
+    background-color: #222;
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    top: 3px;
+    right: 0;
+}
 
 /* 미디어 쿼리 */
 @media (max-width: 1300px) {
@@ -123,12 +135,93 @@
 @media (max-width: 1024px) {
 }
 @media (max-width: 960px) {
+    .new_inner {
+        flex-direction: column;
+        gap: 0;
+    }
+    .new_left {
+        flex: none;
+        width: 100%;
+        height: 400px;
+    }
+    .new_right {
+        width: 100%;
+    }
 }
 @media (max-width: 768px) {
+    #new {
+        background-color: #d9d9d9;
+    }
+    #new .row {
+        background-color: #fff;
+        padding: 0 24px;
+    }
+    .new {
+        padding: 24px 0;
+    }
+    .new h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
 }
 @media (max-width: 600px) {
+    #new {
+        padding: 16px;
+    }
+    #new .row {
+        padding: 0 16px;
+    }
+    .new {
+        padding: 16px 0;
+    }
+    .new_left {
+        height: 200px;
+    }
+    .new_left .play svg {
+        width: 80px;
+        height: 80px;
+    }
+    .new_right {
+        padding: 17px;
+    }
+    .new_right .title {
+        font-size: 22px;
+    }
+    .new_right .star {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .new_right .summary .genre {
+        padding-bottom: 5px;
+    }
+    .new_right .summary .age {
+        padding-bottom: 5px;
+    }
+    .new_right .summary .desc {
+        margin-bottom: 10px;
+    }
+    .new_right .select .s1 {
+        width: 100%;
+        margin-bottom: 2%;
+    }
+    .new_right .select .s2 {
+        width: 100%;
+    }
 }
 @media (max-width: 480px) {
+    #new {
+        padding: 12px;
+    }
+    #new .row {
+        padding: 0 12px;
+    }
+    .new {
+        padding: 12px 0;
+    }
+    .new_right {
+        height: 480px;
+    }
 }
 @media (max-width: 320px) {
 }

@@ -19,7 +19,26 @@
     width: 66%;
     display: flex;
     flex-wrap: wrap;
+
+    transform: translateY(600px);
+    opacity: 0;
+    transition: all 0.33s cubic-bezier(0, 0.52, 0.54, 1);
 }
+.event_right {
+    transform: translateY(600px);
+    opacity: 0;
+    transition: all 0.33s 0.2s;
+}
+
+.event_left.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+.event_right.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .event_box1 {
     width: 100%;
     margin-bottom: 2.25%;
@@ -27,10 +46,6 @@
 .event_box2,
 .event_box3 {
     width: 50%;
-}
-
-.event_right {
-    width: 32%;
 }
 
 /* 미디어 쿼리 */

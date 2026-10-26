@@ -7,6 +7,20 @@
 }
 .help > div {
     flex: 1;
+
+    transform: translateY(200px);
+    opacity: 0;
+    transition: all 0.33s ease-in-out;
+}
+.help > div:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.help > div:nth-child(3) {
+    transition-delay: 0.4s;
+}
+.help > div.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 .help > div h3 {
     font-size: 28px;
@@ -28,8 +42,8 @@
     display: block;
     width: 80px;
     padding: 10px 20px;
-    background-color: #d9d9d9;
     border: 1px solid #b3b3b3;
+    background-color: #d9d9d9;
     color: #5b5b5b;
     font-size: 15px;
     margin-left: -1px;
@@ -51,6 +65,7 @@
 .notice > ul > li > ul > li:last-child {
     border: 0;
 }
+
 .notice > ul > li > ul > li > dl > dt > em {
     color: #999;
 }
@@ -58,6 +73,7 @@
     color: #777;
     padding-top: 3px;
 
+    /* 한줄 글자 생략 삼총사 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -146,6 +162,7 @@
         width: 100%;
     }
 }
+
 @media (max-width: 1024px) {
     .help {
         flex-wrap: wrap;
@@ -163,19 +180,22 @@
         width: 100%;
         margin-top: 20px;
     }
+    .help_box3 h3 {
+        display: none;
+    }
     .service ul {
         border: 1px solid #b3b3b3;
     }
     .service ul li {
-        border: 0;
         width: 25%;
+        border: 0;
     }
 }
 @media (max-width: 960px) {
 }
 @media (max-width: 768px) {
     #help {
-        background-color: #d9d9d9;
+        background: #d9d9d9;
     }
     #help .row {
         padding: 0;
@@ -189,6 +209,7 @@
         font-weight: 600;
         margin-bottom: 10px;
     }
+
     .help_box1 {
         width: 100%;
         margin-bottom: 24px;
@@ -204,13 +225,57 @@
     }
     .help_box3 {
         background-color: #fff;
-        padding: 24px;
+        padding: 16px;
         box-sizing: border-box;
+    }
+    .service ul {
+        border: 0;
+    }
+    .service ul li {
+        height: 160px;
+    }
+    .service ul li a img {
+        width: 60px;
+    }
+    .service ul li a strong {
+        font-size: 16px;
     }
 }
 @media (max-width: 600px) {
+    #help {
+        padding: 16px;
+        padding-top: 0;
+    }
+    .help {
+        padding-bottom: 0;
+    }
+    .service ul li {
+        width: 50%;
+        height: 100px;
+    }
+    .help_box1 {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    .help_box2 {
+        padding: 16px;
+    }
+    .help_box3 {
+        margin-top: 16px;
+    }
 }
 @media (max-width: 480px) {
+    #help {
+        padding: 12px;
+    }
+    .notice > ul > li > a {
+        width: 75px;
+        padding: 10px 15px;
+    }
 }
+
 @media (max-width: 320px) {
+    .card ul {
+        height: 400px;
+    }
 }
